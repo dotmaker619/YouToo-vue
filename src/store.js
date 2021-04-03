@@ -1,0 +1,601 @@
+import Vuex from "vuex";
+import Vue from "vue";
+import router from 'vue-router';
+
+Vue.use(Vuex);
+Vue.use(router);
+
+export default new Vuex.Store({
+  state: {
+    projects: [
+        {
+          id: "1",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "22",
+          img: "img/theme/bootstrap.jpg",
+          title: "Argon Design System",
+          budget: "$2500 USD",
+          status: "completed",
+          status_img: "img/icons/common/status_completed.png",
+          statusType: "warning",
+          completion: 60,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '10.00$',
+          kids: '5.00$',
+          littleKids: '2.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin."
+        },
+        {
+          id: "2",
+          when_content: "01.23.20 20:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/star.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (3).png",
+          participants_content: "22",
+          img: "img/theme/angular.jpg",
+          title: "Angular Now UI Kit PRO",
+          budget: "$1800 USD",
+          status: "active",
+          status_img: "img/icons/common/status_active.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Weekly',
+          day: 'Friday',
+          quorum: 30,
+          capacity: 120,
+          basePrice: '20.00$',
+          kids: '15.00$',
+          littleKids: '5.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "3",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/star.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+          where_icon2: "img/icons/common/zoom.png",
+          group_img: "img/table_img/mobile (2).png",
+          participants_content: "22",
+          img: "img/theme/sketch.jpg",
+          title: "Black Dashboard",
+          budget: "$3150 USD",
+          status: "cancelled",
+          status_img: "img/icons/common/status_cancelled.png",
+          statusType: "danger",
+          completion: 72,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '10.00$',
+          kids: '5.00$',
+          littleKids: '2.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "4",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+          group_img: "img/table_img/mobile (1).png",
+          participants_content: "22",
+          img: "img/theme/react.jpg",
+          title: "React Material Dashboard",
+          budget: "$4400 USD",
+          status: "active",
+          status_img: "img/icons/common/status_active.png",
+          statusType: "info",
+          completion: 90,
+          recurrence: 'Daily',
+          day: 'Saturday',
+          quorum: 40,
+          capacity: 140,
+          basePrice: '50.00$',
+          kids: '30.00$',
+          littleKids: '15.00$',
+          content: "Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "5",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "22",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "completed",
+          status_img: "img/icons/common/status_completed.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '10.00$',
+          kids: '5.00$',
+          littleKids: '2.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "6",  
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (3).png",
+          participants_content: "22",
+          img: "img/theme/bootstrap.jpg",
+          title: "Argon Design System",
+          budget: "$2500 USD",
+          status: "active",
+          status_img: "img/icons/common/status_active.png",
+          statusType: "warning",
+          completion: 60,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '10.00$',
+          kids: '5.00$',
+          littleKids: '2.00$',
+          content: " Raw denim you probably haven't heard of them jean shorts Austin. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "7",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (2).png",
+          participants_content: "22",
+          img: "img/theme/angular.jpg",
+          title: "Angular Now UI Kit PRO",
+          budget: "$1800 USD",
+          status: "completed",
+          status_img: "img/icons/common/status_completed.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '10.00$',
+          kids: '5.00$',
+          littleKids: '2.00$',
+          content: "Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "8",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (1).png",
+          participants_content: "22",
+          img: "img/theme/sketch.jpg",
+          title: "Black Dashboard",
+          budget: "$3150 USD",
+          status: "cancelled",
+          status_img: "img/icons/common/status_cancelled.png",
+          statusType: "danger",
+          completion: 72,
+          recurrence: 'Daily',
+          day: 'Wednesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '100.00$',
+          kids: '60.00$',
+          littleKids: '20.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "9",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "22",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "10",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "25",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "11",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "27",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "12",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (1).png",
+          participants_content: "28",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "13",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (3).png",
+          participants_content: "29",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "14",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (1).png",
+          participants_content: "30",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "15",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (2).png",
+          participants_content: "32",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "16",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (4).png",
+          participants_content: "35",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "17",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (1).png",
+          participants_content: "37",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "18",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (2).png",
+          participants_content: "19",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        },
+        {
+          id: "19",
+          when_content: "01.23.20 19:20",
+          name_content: "Bowling",
+          name_img: "img/icons/common/calendar.png",
+          where_title: "Bowling Club",
+          where_content: " 9625 Black Mountain Rd, Suite 315, San Diego, CA",
+          where_icon1: "img/icons/common/place.png",
+
+          group_img: "img/table_img/mobile (3).png",
+          participants_content: "12",
+          img: "img/theme/vue.jpg",
+          title: "Vue Paper UI Kit PRO",
+          budget: "$2200 USD",
+          status: "drafted",
+          status_img: "img/icons/common/status_draft.png",
+          statusType: "success",
+          completion: 100,
+          recurrence: 'Monthly',
+          day: 'Tuesday',
+          quorum: 20,
+          capacity: 120,
+          basePrice: '60.00$',
+          kids: '40.00$',
+          littleKids: '10.00$',
+          content: "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Mustache cliche tempor, williamsburg carles vegan helvetica. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
+        }
+      ],
+      selectOptions: [
+        {
+          label: 'Monthly',
+          value: 'Monthly'
+        },
+        {
+          label: 'Weekly',
+          value: 'Weekly'
+        },
+        {
+          label: 'Daily',
+          value: 'Daily'
+        }
+      ],
+        selectOptions2: [
+        {
+          label: 'Monday',
+          value: 'Monday'
+        },
+        {
+          label: 'Tuesday',
+          value: 'Tuesday'
+        },
+        {
+          label: 'Wednesday',
+          value: 'Wednesday'
+        },
+        {
+          label: 'Thursday',
+          value: 'Thursday'
+        },
+        {
+          label: 'Friday',
+          value: 'Friday'
+        },
+        {
+          label: 'Saturday',
+          value: 'Saturday'
+        },
+        {
+          label: 'Sunday',
+          value: 'Sunday'
+        },
+        ],
+  },
+
+  actions: {
+    setPublished({commit}, id) {
+      commit("SET_PUBLISHED", id);
+    }
+  },
+
+  mutations: {
+    SET_PUBLISHED(state, payload) {
+      let project = state.projects.filter((pro) => pro.id === payload)[0]
+      state.projects = state.projects.filter((pro) => pro.id !== payload)
+      project.status = 'active'
+      project.status_img = "img/icons/common/status_active.png"
+      state.projects.unshift(project)
+    }
+  },
+
+  getters: {
+    draftProject: (state) => {
+        if (state.projects) {
+          return state.projects.filter((project) => {
+            return project.status === "drafted"
+          })
+        }
+      },
+    publishedProject: (state) => {
+      if (state.projects) {
+          return state.projects.filter((project) => {
+            return project.status !== "drafted"
+          })
+        }
+    }
+  }
+});
